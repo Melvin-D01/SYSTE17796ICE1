@@ -15,16 +15,29 @@ public class Assignment {
             tempArray[counter] = (Math.random() * 100) +1;
         }
         double avg = (int)(calcAvg(tempArray) * 10);
+        double maxTemp = (int) calcMax(tempArray) * 10;
         System.out.println("The average temperature is: " + (double)(avg / 10));
+        System.out.println("The max temperature is " + (double)maxTemp / 10);
     }
     
     public static double calcAvg(double[] tempArray){
         double x = 0;
         for(int counter = 0; counter < tempArray.length;counter++){
-            x += tempArray[counter];
+            if(tempArray[counter] >-50 && tempArray[counter] < 50){
+               x += tempArray[counter];
+            }
+            
         }
-        
-        
         return x/ tempArray.length;
+    }
+    
+    public static double calcMax(double[] tempArray){
+        double x = 0;
+        for(int counter = 0; counter < tempArray.length-1;counter++){
+            if(tempArray[counter] < tempArray[counter+1]){
+                x = tempArray[counter+1];
+            }
+        }     
+        return x;
     }
 }
