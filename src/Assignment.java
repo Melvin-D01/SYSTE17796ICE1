@@ -19,12 +19,12 @@ public class Assignment {
     }
     
     public static double calcAvg(double[] tempArray){
-        double average = 0;
+        double x = 0;
         for(int counter = 0; counter < tempArray.length;counter++){
-            average += tempArray[counter];
+            x += tempArray[counter];
         }
         
         
-        return average/ tempArray.length;
+        return x/ tempArray.length;
     }
 }
